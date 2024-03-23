@@ -29,7 +29,7 @@
                             </svg>
                             <span class="mt-2 text-base leading-normal">Upload</span>
                             <input type='file' class="hidden" id="fileInput"
-                            required>
+                            onchange="showFileType()">
                         </label>
                     </div>
                     </button>
@@ -47,6 +47,7 @@
 
                 </div>
             </div>
+            <div id="fileTypeDisplay" class="mt-4 text-gray-700"></div> <!-- Display file type here -->
         </div>
         <a href="/file_list" class="mt-10 bg-blue-500 hover:bg-blue-600 text-white font-bold py-6 px-10 rounded-lg flex items-center justify-center">
             Storage Medium
@@ -55,6 +56,15 @@
             </svg>
         </a>
     </div>
+
+    <script>
+        function showFileType() {
+            const fileInput = document.getElementById('fileInput');
+            const fileTypeDisplay = document.getElementById('fileTypeDisplay');
+            const fileType = fileInput.files[0].type;
+            fileTypeDisplay.innerText = `File type: ${fileType}`;
+        }
+    </script>
 </body>
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.932.0.min.js"></script>
 <script src="static\script.js"></script>
