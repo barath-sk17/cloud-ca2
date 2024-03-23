@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File-Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="container mx-auto flex flex-col justify-center items-center">
+        
+        <h1 class="box-decoration-slice text-4xl font-bold my-8 bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-8 ...">
+            AWS Storage Medium
+        </h1>
+        <div class="border rounded-lg shadow-lg p-20 flex flex-col items-center mt-12">
+            <h2 class="text-2xl font-semibold mb-4">Upload Files</h2>
+            <div class="w-full max-w-sm mx-auto">
+                
+                <div class="mt-4">                    
+                    <button
+                    onclick="uploadFiles('barathsanjithbucket')">
+                    <div >
+                        <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
+                            <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                            </svg>
+                            <span class="mt-2 text-base leading-normal">Upload</span>
+                            <input type='file' class="hidden" id="fileInput"
+                            required>
+                        </label>
+                    </div>
+                    </button>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 flex flex-row justify-center gap-8 rounded-lg"
+                        onclick="uploadFiles('barathsanjithbucket')">Upload
+                        File
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <a href="/file_list" class="mt-10 bg-blue-500 hover:bg-blue-600 text-white font-bold py-6 px-10 rounded-lg flex items-center justify-center">
+            Storage Medium
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 ml-2">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>
+</body>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.932.0.min.js"></script>
+<script src="static\script.js"></script>
+
+</html>
